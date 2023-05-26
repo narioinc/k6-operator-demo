@@ -1,0 +1,13 @@
+apiVersion: k6.io/v1alpha1
+kind: K6
+metadata:
+  name: k6-sample
+spec:
+  parallelism: 4
+  script:
+    volumeClaim:
+      name: stress-test-volumeclaim
+      # test.js should exist inside /test/ folder.
+      # And, All the js files and directories test.js
+      # is importing from should be inside the same directory as well.
+      file: test.js
